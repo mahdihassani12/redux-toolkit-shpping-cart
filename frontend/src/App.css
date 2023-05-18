@@ -46,3 +46,18 @@ a {
     width: 90%;
     margin: 0 auto;
 }
+
+.not-found {
+    text-align: center;
+}
+
+.not-found p {
+    font-size: 4rem;
+    margin-bottom: 0px;
+}
+
+.not-found h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-top: 10px;
+}
