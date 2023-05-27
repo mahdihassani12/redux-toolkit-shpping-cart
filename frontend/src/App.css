@@ -61,3 +61,31 @@ a {
     font-weight: 400;
     margin-top: 10px;
 }
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products .product {
+    width: 24%;
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin: 4px;
+    padding: 10px 0px;
+}
+
+.products .product img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+}
+
+.products .product button {
+    margin-top: 15px;
+    border: unset;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
