@@ -1,7 +1,8 @@
+import { useGetAllProductsQuery } from "../features/productsApi";
+
 const Home = () => {
-    return (
-        <div className="container">Home Component</div>
-    );
-}
- 
+  const { data, error, isLoading } = useGetAllProductsQuery();
+  return <div className="container">Home Component</div>;
+};
+
 export default Home;
