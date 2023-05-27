@@ -5,13 +5,15 @@ import { BrowserRouter } from "react-router-dom";
 
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import productsReducer from "./features/productSlice";
+import productsReducer, { productFetch } from "./features/productSlice";
 
 const store = configureStore({
   reducer: {
     products: productsReducer,
   },
 });
+
+store.dispatch(productFetch());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
