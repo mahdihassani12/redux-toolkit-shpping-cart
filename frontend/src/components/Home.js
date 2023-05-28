@@ -1,7 +1,14 @@
 import { useGetAllProductsQuery } from "../features/productsApi";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cartSlice";
 
 const Home = () => {
   const { data, error, isLoading } = useGetAllProductsQuery();
+  const dispatch = useDispatch();
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
   return (
     <div className="container">
       {isLoading ? (
@@ -14,13 +21,15 @@ const Home = () => {
           <div className="products">
             {data?.map((product) => (
               <div key={product.id} className="product">
-                <img src={ require(`../assets/images/${product.image}`) } />
+                <img src={require(`../assets/images/${product.image}`)} />
                 <h3>{product.name}</h3>
                 <div className="details">
                   <span>${product.price}</span>
                   <span>{product.desc}</span>
                 </div>
-                <button>Add to cart</button>
+                <button onClick={() => handleAddToCart(product)}>
+                  Add to cart
+                </button>
               </div>
             ))}
           </div>
